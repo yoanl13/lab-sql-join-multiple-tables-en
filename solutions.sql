@@ -46,7 +46,7 @@ JOIN inventory AS i ON r.inventory_id = i.inventory_id
 JOIN film_category AS fc ON i.film_id = fc.film_id
 JOIN category AS c ON fc.category_id = c.category_id
 GROUP BY c.name
-ORDER BY count(r.inventory_id) DESC
+ORDER BY sum(p.amount) DESC
 LIMIT 5;
 
 --7 Is "Academy Dinosaur" available for rent from Store 1?
